@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #14bdac;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.game-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-name{
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 50px;
+    color: rgb(38, 64, 64);
+}
+
+.cell-group{
+    background-color: rgba(103, 103, 103, 0.501);
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    gap: 5px;
+    max-height: 500px;
+}
+
+.cells{
+    background-color: #14bdac;
+    display: grid;
+    place-items: center;
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.result-div{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.winner-name{
+    font-size: 150px;
+}
+
+.winner-message{
+    font-size: 50px;
+    color: rgb(75, 75, 75);
+}
+
+#restart-btn{
+    padding: 10px 20px;
+    margin-top: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(38, 64, 64);
+}
+
+#restart-btn:hover{
+    background-color: #d1d1d1;
+}

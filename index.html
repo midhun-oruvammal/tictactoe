@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-name">Tic Tac Toe</h1>
+        <div class="cell-group" id="cell-group">
+            <div class="cells" id="0" onclick="cellSign(0)"></div>
+            <div class="cells" id="1" onclick="cellSign(1)"></div>
+            <div class="cells" id="2" onclick="cellSign(2)"></div>
+            <div class="cells" id="3" onclick="cellSign(3)"></div>
+            <div class="cells" id="4" onclick="cellSign(4)"></div>
+            <div class="cells" id="5" onclick="cellSign(5)"></div>
+            <div class="cells" id="6" onclick="cellSign(6)"></div>
+            <div class="cells" id="7" onclick="cellSign(7)"></div>
+            <div class="cells" id="8" onclick="cellSign(8)"></div>
+            </div>
+            <div class="result-div" id="result-div">
+                <span class="winner-name" id="winner-name">X</span>
+                <span class="winner-message" id="winner-message"></span>
+            </div>
+            <button id="restart-btn" onclick="restartGame()">Play Again</button>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
