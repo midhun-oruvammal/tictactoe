@@ -1,30 +1,39 @@
-/* eslint-disable no-console */
-/* eslint-disable no-alert */
-/* eslint-disable no-undef */
-// eslint-disable-next-line max-len
 const win = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 let xIndex = [];
 let oIndex = [];
 let gameStatus = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
+
 function cellSign(index) {
     const currCell = document.getElementById(index);
-    if (currCell.innerHTML === '') {
-        if (currentPlayer === 'X') {
-            document.getElementById(index).style.color = '#545454';
-            currCell.innerHTML = currentPlayer;
-            gameStatus[index] = currentPlayer;
-            xIndex.push(index);
-            checkWinner(xIndex, currentPlayer);
-            currentPlayer = 'O';
-        } else {
-            document.getElementById(index).style.color = 'white';
-            currCell.innerHTML = currentPlayer;
-            gameStatus[index] = currentPlayer;
-            oIndex.push(index);
-            checkWinner(oIndex, currentPlayer);
-            currentPlayer = 'X';
+    if (currCell.innerHTML === '' && currentPlayer === 'X') {
+        document.getElementById(index).style.color = '#545454';
+        currCell.innerHTML = currentPlayer;
+        gameStatus[index] = currentPlayer;
+        xIndex.push(index);
+        checkWinner(xIndex, currentPlayer);
+        currentPlayer = 'O';
+        if (gameStatus.some(cell => cell === '')) { 
+            setTimeout(computerMove, 500);
         }
+    }
+}
+
+function computerMove() {
+    let emptyCells = [];
+    for (let i = 0; i < 9; i++) {
+        if (gameStatus[i] === '') {
+            emptyCells.push(i);
+        }
+    }
+    if (emptyCells.length > 0) {
+        const randomIndex = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+        document.getElementById(randomIndex).style.color = 'white';
+        document.getElementById(randomIndex).innerHTML = 'O';
+        gameStatus[randomIndex] = 'O';
+        oIndex.push(randomIndex);
+        checkWinner(oIndex, 'O');
+        currentPlayer = 'X';
     }
 }
 
